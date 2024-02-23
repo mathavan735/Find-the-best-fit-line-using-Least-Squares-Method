@@ -18,34 +18,41 @@ To implement univariate Linear Regression to fit a straight line using least squ
 
 ## Program:
 ```
-/*
-Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: mathavan s
-RegisterNumber:  212221220031
-*/
 import numpy as np
 import matplotlib.pyplot as plt
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-Xmean=np.mean(X)
-Ymean=np.mean(Y)
-num,den=0,0 # num = numerator, den = denomenator
-for i in range(len(X)):
-  num+=(X[i]-Xmean)*(Y[i]-Ymean)
-  den+=(X[i]-Xmean)**2
-m=num/den
-c=Ymean-m*Xmean
-print(m,c)
-Y_pred=m*X+c
-print(Y_pred)
-plt.scatter(X,Y)
-plt.plot(X,Y_pred,color="red")
+x =np.array(eval(input()))
+y =np.array(eval(input()))
+ #Mean
+
+x_mean =np.mean(x)
+y_mean =np.mean(y)
+
+num=0 # for slops
+denom=0 #for slope
+
+for i in range(len(x)):
+    num+=(x[i]-x_mean)*(y[i]-y_mean)
+    denom+= (x[i]-x_mean)**2
+
+    m=num/denom
+
+    b=y_mean-m*x_mean
+
+print(m,b)
+
+y_predicted=m*x+b
+print(y_predicted)
+
+plt.scatter(x,y)
+plt.plot(x,y_predicted,color='red')
 plt.show()
+[6,10,2,4,6,7,0,1,8,5,3]
+[82,88,56,64,77,92,23,41,80,59,47]
 ```
 
 ## Output:
-![mlout](https://user-images.githubusercontent.com/119393424/229975305-ff1afb7c-6f29-4180-ac16-f611afc1624a.png)
 
+![Screenshot 2024-02-22 034500](https://github.com/RamkumarGunasekaran/Find-the-best-fit-line-using-Least-Squares-Method/assets/144870820/6f6d4be6-ddb8-4116-8e19-1f5145b7024d)
 
 
 ## Result:
